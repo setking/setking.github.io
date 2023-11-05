@@ -50,7 +50,7 @@ image:
     > 执行 `jekyll new Blog` <br>
     > 可能会卡到 Running bundle install in /blog… 这一步，这时候`ctrl+c`终止掉，进入新建的项目，将 gemfile 的 source "https://rubygems.org"改为source ‘https://gems.ruby-china.com’, 然后在当前目录执行 `bundle install` 就行。<br> `bundle exec jekyll serve`启动服务
   - 启动日志如下：
-  - ![Desktop View](setking/setking.github.io/assets/img/sample/Code.png)
+  - ![Desktop View](setking.github.io/assets/img/sample/Code.png)
   - 浏览器访问：<http://127.0.0.1:4000>
 - 添加 MarkDown 文档
   - 在项目根目录下的 \_posts 目录创建 markdown 文档。这里注意 md 文档命名要添加 “yyyy-mm-dd”的前缀。
