@@ -1,6 +1,6 @@
 ---
 title: typescript 学习
-author: cotes
+author: setKing
 date: 2023-10-24 11:33:00 +0800
 categories: [学习]
 tags: [学习]

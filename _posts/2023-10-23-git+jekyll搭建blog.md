@@ -1,6 +1,6 @@
 ---
 title: github + jekyll搭建个人blog
-author: cotes
+author: setKing
 date: 2023-10-23 11:33:00 +0800
 categories: [博客, 教程, 学习]
 tags: [教程]
