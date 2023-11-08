@@ -20,6 +20,9 @@ mermaid: true
   ],
   "exclude": [
     // 在 include 包含的文件夹中需要排除哪些文件
+  ],
+  "references": [
+    //通过 references 可以引用其他 project
   ]
 }
 ```
