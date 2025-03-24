@@ -4,5 +4,5 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> 这个博客用来记录我在计算机学科的成长历程.
-> {: .prompt-tip }
+> 书山有路勤为径，学海无涯苦作舟
+{: .prompt-tip }
