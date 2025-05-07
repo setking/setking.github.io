@@ -1,53 +1,49 @@
-name: Pages
+name: Deploy Hexo to GitHub Pages
 
 on:
   push:
     branches:
-      - main # default branch
+      - main # 或你使用的默认分支名称
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout blog source
+        uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
-          submodules: recursive
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
+          path: blog
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
         with:
-          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
-          # Ref: https://github.com/actions/setup-node#supported-version-syntax
-          node-version: '20'
-      - name: Cache NPM dependencies
+          node-version: '16' # 设置 Node.js 版本
+
+      - name: Cache dependencies
         uses: actions/cache@v4
         with:
           path: node_modules
-          key: ${{ runner.OS }}-npm-cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.OS }}-npm-cache
-      - name: Install Dependencies
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
         run: npm install
-      - name: Build
-        run: npm run build
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
+        working-directory: ./blog
+
+      - name: Install Hexo CLI
+        run: npm install -g hexo-cli
+        working-directory: ./blog
+
+      - name: Generate static pages
+        run: hexo generate
+        working-directory: ./blog
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ./blog/public
+          external_repository: username/username.github.io # 更改为你的 GitHub Pages 仓库, username 是你的用户名
+          publish_branch: main # GitHub Pages 分支
