@@ -1,6 +1,6 @@
 ---
 title: sql和sqlx使用
-author: cotes
+author: setKing
 date: 2024-06-13 11:33:00 +0800
 categories: [学习]
 tags: [学习]
