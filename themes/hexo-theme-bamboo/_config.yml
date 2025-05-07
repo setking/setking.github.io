@@ -14,29 +14,28 @@ menu:
   Categories:
     url: /categories
     icon: fas fa-bookmark
-  # Friends:
-  #   url: /friends
-  # 更多:
-  #   # 这是二级菜单的写法
-  #   icon: fas fa-link
-  #   children:
-  #     - name: 图库
-  #       url: /gallery
-  #       icon: fas fa-music
-  #     - name: 友情连接
-  #       url: /huoban
-  #       icon: fas fa-film
-  #     - name: 关于我
-  #       url: /me
-  #       icon: fas fa-film
-  #     - name: 百度
-  #       url: http://baidu.com
-  #       icon: fas fa-film
+  Friends:
+    url: /friends
+#   更多: # 这是二级菜单的写法
+#    icon: fas fa-link
+#    children:
+#     - name: 图库
+#       url: /gallery
+#       icon: fas fa-music
+#     - name: 友情连接
+#       url: /huoban
+#       icon: fas fa-film
+#     - name: 关于我
+#       url: /me
+#       icon: fas fa-film
+#     - name: 百度
+#       url: http://baidu.com
+#       icon: fas fa-film
 
 # github地址, 头部导航右上角的github链接
 Github:
   on: true
-  url: https://github.com/setking/setking.github.io
+  url: https://github.com/setking?tab=repositories
 
 # 网站logo
 logo: /medias/logo.png # 为空则不显示
@@ -53,21 +52,21 @@ sidebar:
       avatar: https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp
       shape: rectangle # circle, rectangle
       url: /about/
-      title: setKing
-      subtitle: 编程之火，熊熊燃烧
+      title: 青墨书晚风
+      subtitle: 我是副标题
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif
       background: '#fff'
       order: # 卡片排序, 数值越小，越在上面
       social:
-        # - icon: fas fa-rss
-        #   url: /atom.xml
+        - icon: fas fa-rss
+          url: /atom.xml
         - icon: fas fa-envelope
-          url: 1330942316@qq.com
+          url: mailto:me@xxx.com
         - icon: fab fa-github
-          url: https://github.com/setking/setking.github.io
+          url: https://github.com/yuang01/hexo-theme-bamboo
         - icon: fab fa-qq
-          url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1330942316
+          url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=你的qq号码
     # ---------------------------------------
     side_toc:
       on: true
@@ -149,7 +148,7 @@ sidebar:
           unit: '篇'
         runtime:
           on: true
-          data: '2022/05/02' # 填写建站日期
+          data: '2020/01/01' # 填写建站日期
           text: '已运行时间：'
           unit: '天'
         wordcount:
@@ -198,11 +197,11 @@ swiper:
   defaultImg: 'https://pic1.zhimg.com/v2-af3ccef61cf58b1a70765747cc1bbeac_b.jpg' # 图片，没有则随机选取
   defaultVideo: '' # video，min-width:992px show
   defaultVideoLoadingImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/175057/18/19582/882056/60ee7ac8Ef0045710/202d2ad878684a3b.gif' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
-  defaultTile: '学如逆水行舟，不进则退' # 标题
+  defaultTile: '青墨书晚风' # 标题
   defaultDesc: [] #描 述，例如 ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']
-  defaultLeftBtnText: '' # 左边按钮文字, 空字符串则不显示
+  defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
   defaultLeftBtnLink: 'https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/' # 左边按钮链接
-  defaultRightBtnText: '' # 右边按钮的文字，空字符串则不显示
+  defaultRightBtnText: '下载主题' # 右边按钮的文字，空字符串则不显示
   defaultRightBtnLink: 'https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip' # 右边的按钮的链接
   defaultDescTyped: true # defaultDesc文字是否开启打字特效  is typed
   defaultDescTypedSpeed: 100 # defaultDesc 打字速度, typed typeSpeed
@@ -354,13 +353,12 @@ music:
 #版权信息  coryRyght
 copyright:
   on: true
-  author: 'setKing'
 
 # 首页座右铭
 motto:
   on: true
   title: '座右铭'
-  content: '生如夏花之绚烂，死如秋叶之静美。——泰戈尔'
+  content: '沉淀后我愿意做个温暖的人，有自己的喜好，有自己的原则，有自己的信仰，不急功近利，不浮夸轻薄。宠辱不惊，淡定安逸，心静如水，不忘初心，方得始终。——凌茜'
   background: 'url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png")' # url("xxx") or red or #000 or rgba() ..
 
 # 首页公告
@@ -369,12 +367,29 @@ notice:
   seamless: false # 为true时，则无缝不停止滚动，false是会停一下的滚动
   title: '公告'
   background: 'url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png")' # url("xxx") or red or #000 or rgba() ..
-  list:
-    # list相当于数组对象，[{title:'xx',date: 'xx', url: 'xxx', color: 'red'}]根据自己实际情况，增加或者删除
-    - title: '#新的博客终于建成了，欢迎访问'
-      date: '2020-05-02'
-      url: '' # 可以为空, 也可以是本地页面地址如 '/archives'
-      color: red # 字体颜色
+  list:# list相当于数组对象，[{title:'xx',date: 'xx', url: 'xxx', color: 'red'}]根据自己实际情况，增加或者删除
+    # - title: '#博客更新到2.0了'
+    #   date: '2021-04-28'
+    #   url: '/archives'   # 可以为空, 也可以是本地页面地址如 '/archives'
+    #   color: red   # 字体颜色
+    # - title: '#新增 轮播图支持三种模式了，功能也增强了 ~'
+    #   date: '2021-04-28'
+    #   url: 'http://baidu.com'
+    #   color: red
+    # - title: '#新增 支持二级导航'
+    #   date: '2021-04-28'
+    #   url: 'http://baidu.com'
+    #   color: blue
+    # - title: '#新增 归档，分类等页面头部图片位置可以设置为视频 ~'
+    #   date: '2021-04-28'
+    #   url: 'http://baidu.com'
+    #   color: '#42b983'
+    # - title: '#新增 头部导航可以设置为在顶部透明，并且可以任意设置背景颜色了 ~'
+    #   date: '2021-04-28'
+    #   url: 'http://baidu.com'
+    # - title: '#新增 首页增加了座右铭和公告栏目 ~'
+    #   date: '2021-04-28'
+    #   url: 'http://baidu.com'
 
 # 文章置顶
 topArticle:
@@ -626,9 +641,8 @@ site_footer:
     #   url: https://github.com/yuang01/hexo-theme-bamboo
     # - icon: fas fa-qq
     #   url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541
-  copyright: 'Copyright © 2019 - 2020 <a href="https://github.com/setking">setking</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> '
-  custom:
-    # 根据需要自行取消注释，label: 'markdown格式'，会在下面继续增加内容
+  copyright: 'Copyright © 2019 - 2020 <a href="https://github.com/yuang01">yuang01</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> '
+  custom:# 根据需要自行取消注释，label: 'markdown格式'，会在下面继续增加内容
     # - label: '<br>'
     # - label: '[Hello World](http://baidu.com)'
 
@@ -667,10 +681,9 @@ pjax:
   animationColor: 'orangered' # animation为 nprogress时候的动画颜色, red or #000 ...
   cacheBust: false # url 地址追加时间戳，用以避免浏览器缓存
   timeout: 5000 # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
-  banUrl:
-  # 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
-  # - '/xxx'   # 注意， 后面不需要加斜杠，例如 '/about'
-  # - '/xxx'
+  banUrl:# 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
+    # - '/xxx'   # 注意， 后面不需要加斜杠，例如 '/about'
+    # - '/xxx'
 
 # 鼠标手势
 cursor:
