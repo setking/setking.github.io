@@ -3,7 +3,7 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - main # 或你使用的默认分支名称
+      - master # 或你使用的默认分支名称
 
 jobs:
   deploy:
@@ -45,5 +45,5 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./blog/public
-          external_repository: username/username.github.io # 更改为你的 GitHub Pages 仓库, username 是你的用户名
+          external_repository: setking/setking.github.io # 更改为你的 GitHub Pages 仓库, username 是你的用户名
           publish_branch: main # GitHub Pages 分支
