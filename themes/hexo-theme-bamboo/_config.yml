@@ -54,7 +54,7 @@ sidebar:
       shape: rectangle # circle, rectangle
       url: /about/
       title: setKing
-      subtitle: 编程之火，熊熊燃烧
+      subtitle: 学习要一步一个脚印
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif
       background: '#fff'
