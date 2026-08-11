@@ -36,12 +36,12 @@ Spanner被组织成许多个zone的集合，每个zone都大概像一个`BigTabl
 
 下图是架构：
 
-![](.\img\GoogleSpanner-fig1.jpg)
+![](assets/img/MitGoogleSpanner-fig1.jpg)
 
 #### SpanServer
 
 下图是`spanserver`的软件架构：
-![](.\img\GoogleSpanner-fig2.jpg)
+![](assets/img/MitGoogleSpanner-fig2.jpg)
 
 每个`spanserver`负载管理100-1000个称为tablet的数据结构的实例。一个tablet就类似于`BigTable`中的tablet，也实现了映射：`(key:string, timestamp:int64)->string`。每个`spanserver`都会在tablet上运行一个Paxos状态的服务器。每个状态机器都会在相应的tablet中保存自己的元数据和日志。Spanner的Paxos的实现支持采用基于时间的领导者租约的长寿命的领导者，时间通常在0到10秒之间。这使得Paxos写操作进行两次记录：一次是写入到tablet日志中，一次是写入到Paxos日志中。一个写操作既需要经过Paxos复制协议形成一致日志，同时需要通过tablet日志保证本地持久化和恢复。Paxos状态机用来实现一系列被一致性复制的映射。每个副本的键值映射状态，都会被保存到相应的tablet中。
 

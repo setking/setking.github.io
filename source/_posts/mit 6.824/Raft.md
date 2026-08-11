@@ -21,11 +21,11 @@ Raft是一种用于实现复制状态机一致性的共识算法，通过管理�
 
 下图总结了Raft算法：
 
-![](.\img\raft.jpg)
+![](assets/img/Mitraft.jpg)
 
 下图列出了该算法的关键属性：
 
-![](.\img\Raft_key.jpg)
+![](assets/img/MitRaft_key.jpg)
 
 Raft将共识问题分解为三个相对独立的子问题：
 
@@ -639,7 +639,7 @@ Leader在某些场景下必须向落后的Follower发送快照。 比如下一�
 
 Leader使用一个称为InstallSnapshot的新类型RPC将快照发送给过于落后的Follower。当一个Follower通过该RPC接收到一个快照时，它必须判断如何处理本地现有的日志条目。通常情况下，快照会包含接收方日志中不存在的新信息。在这种情况下，Follower会丢弃其整个日志，都用快照代替，日志中也可能包含未提交且与快照冲突的条目。否则，由于重传或错误，追随者接收到对应其日志前缀的快照，那么快照对应的日志条目将被删除，但位于快照之后的条目仍然有效并且必须保留。
 
-![](.\img\installSnapshot.jpg)
+![](assets/img/MitinstallSnapshot.jpg)
 
 这种快照方法偏离了Raft的强Leader原则，因为Follower可以在无需Leader信息的前提下进行快照。但是这个原则的违背是有道理的。虽然拥有一个Leader有助于避免在达成共识过程中产生冲突，但当进行快照时已经达成了共识，因此没有冲突需要Leader去协调。数据仍然只从Leader流向Follower，只是Follower也有了重组自己数据的能力。
 
