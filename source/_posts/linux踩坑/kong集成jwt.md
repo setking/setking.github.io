@@ -2,8 +2,8 @@
 title: kong集成jwt
 author: setKing
 date: 2025-06-15 11:33:00 +0800
-categories: [教程, 文档]
-tags: [学习, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: 教程
 math: true
 mermaid: true
@@ -22,10 +22,6 @@ mermaid: true
 返回上一页
 
 ![](assets/img/sample/consumer-bord.jpg)
-
-
-
-
 
 点击创建好了的选项进入详情，再点击credentials选项创建jwt
 
@@ -77,5 +73,3 @@ consumer的Secret设置为项目jwt的key，我的项目为例
 > 由于我的项目里的jwt没有Bearer，所以需要修改一下，JWT验证的时候添加以下一行代码
 >
 > ![](assets/img/sample/debug.jpg)
->
-> 

@@ -2,8 +2,8 @@
 title: linux docker安装consul
 author: setKing
 date: 2025-007-01 11:33:00 +0800
-categories: [教程, 文档]
-tags: [教程, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: true
 math: true
 mermaid: true
@@ -31,4 +31,3 @@ docker container update --restart=always 容器id
 ```
 dig @192.168.0.122 -p 8600 hashicorp/consul.service.consul SRV
 ```
-

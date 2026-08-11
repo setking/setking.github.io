@@ -2,8 +2,8 @@
 title: linux docker安装jaeger
 author: setKing
 date: 2025-07-20 11:33:00 +0800
-categories: [教程, 文档]
-tags: [学习, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: 教程
 math: true
 mermaid: true
@@ -112,4 +112,3 @@ Use(otelgin.Middleware("goods-server"))
 		grpc.StatsHandler(otelgrpc.NewServerHandler(otelgrpc.WithTracerProvider(tp))),
 	)
 ```
-

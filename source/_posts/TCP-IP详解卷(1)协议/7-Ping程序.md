@@ -2,8 +2,8 @@
 title: TCP/IP详解 卷一 Ping程序
 author: TCP/IP详解
 date: 2025-10-07 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [TCP/IP, 积累]
+tags: [TCP/IP, 积累]
 pin: true
 math: true
 mermaid: true
@@ -49,7 +49,7 @@ IP时间戳选项与记录路由选项类似。 IP时间戳选项的格式如图
 
 时间戳选项的代码为 0x44。其他两个字段 len和ptr与记录路由选项相同：选项的总长度（一般为36或40）和指向下一个可用空间的指针（ 5，9，13等）。
 
-接下来的两个字段是 4bit的值：OF表示溢出字段，FL表示标志字段。时间戳选项的操作根据标志字段来进行，如图 
+接下来的两个字段是 4bit的值：OF表示溢出字段，FL表示标志字段。时间戳选项的操作根据标志字段来进行，如图
 
 ![](assets/img/tcp_ip/时间戳选项不同标志字段值的意义.jpg)
 

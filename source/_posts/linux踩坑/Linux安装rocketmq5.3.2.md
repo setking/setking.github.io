@@ -2,8 +2,8 @@
 title: Ubuntu安装RocketMQ v5.3.2和docker安装rocketmq-dashboard
 author: setKing
 date: 2026-03-07 11:33:00 +0800
-categories: [教程, 文档]
-tags: [学习, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: 教程
 math: true
 mermaid: true

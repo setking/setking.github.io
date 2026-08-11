@@ -2,8 +2,8 @@
 title: CentOS配置阿里源
 author: setKing
 date: 2025-07-01 11:33:00 +0800
-categories: [教程, 文档]
-tags: [学习, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: 教程
 math: true
 mermaid: true
@@ -31,4 +31,3 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos
 yum clean all
 yum makecache
 ```
-

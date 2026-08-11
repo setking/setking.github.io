@@ -2,8 +2,8 @@
 title: linux安装Jenkins
 author: setKing
 date: 2025-05-22 11:33:00 +0800
-categories: [教程, 文档]
-tags: [学习, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: 教程
 math: true
 mermaid: true
@@ -73,24 +73,24 @@ mermaid: true
 
   ```
   修改：
-  	User=root 
-  	Group=root 
+  	User=root
+  	Group=root
   	Environment=“JAVA_HOME=/usr/local/jdk-17.0.12+7/”
       Environment=“JENKINS_JAVA_CMD=/usr/local/jdk-17.0.12+7/bin/java”
       8080访问端口是默认高危常见端口，可以自定义：
       Environment=“JENKINS_PORT=8080”
-  
-  
+
+
   # $JENKINS_WEBROOT.
   User=root
   Group=root
-  
+
   # The Java home directory. When left empty, JENKINS_JAVA_CMD and PATH are consulted.
   #Environment="JAVA_HOME=/usr/local/jdk-17.0.13+11/"
-  
+
   # The Java executable. When left empty, JAVA_HOME and PATH are consulted.
   #Environment="JENKINS_JAVA_CMD=/usr/local/jdk-17.0.13+11/bin/java"
-  
+
   # Port to listen on for HTTP requests. Set to -1 to disable.
   # To be able to listen on privileged ports (port numbers less than 1024),
   # add the CAP_NET_BIND_SERVICE capability to the AmbientCapabilities
@@ -108,7 +108,7 @@ mermaid: true
   Active: active (running) since Wed 2024-11-20 17:19:51 CST; 2 days ago
 
   [root@192 ~]# ss -atnl
-  LISTEN 0 50  *:8089 
+  LISTEN 0 50 \*:8089
 
   [root@192 ~]# systemctl enable jenkins
 
@@ -119,7 +119,6 @@ mermaid: true
 - jenkins替换国内插件源
 
   > jenkins更换插件源的方法我试过了，发现清华镜像源的`https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json`里面的路径依然是国外的，替换了也没用。所以得更改这个文件里的连接。
-
   - 找到update-center.json文件
     不同安装方式的文件位置不一样，找一找就能找到，我是rpm包安装的，在`/var/lib/jenkins/updates/`下
 
@@ -140,4 +139,3 @@ mermaid: true
     Dashboard > 插件管理 > 高级 > 升级站点 > URL
     URL更改为`https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json`
     重启之后安装插件就很快了
-

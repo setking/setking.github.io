@@ -2,8 +2,8 @@
 title: linux docker安装Elasticsearch和kibana
 author: setKing
 date: 2025-07-05 11:33:00 +0800
-categories: [教程, 文档]
-tags: [学习, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: 教程
 math: true
 mermaid: true
@@ -35,15 +35,11 @@ sudo firewall-cmd --reload
 docker network create elastic
 ```
 
-
-
 #### 获取镜像
 
 ```
 docker pull docker.elastic.co/elasticsearch/elasticsearch:8.19.0
 ```
-
-
 
 #### 首次运行容器（生成配置文件）
 
@@ -106,5 +102,5 @@ sudo sysctl -w vm.max_map_count=262144
 ```
 sudo vim /etc/sysctl.conf
 #末尾写入以下内容
-vm.max_map_count=262144 
+vm.max_map_count=262144
 ```

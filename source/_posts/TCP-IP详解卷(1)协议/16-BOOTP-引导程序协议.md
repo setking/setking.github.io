@@ -2,8 +2,8 @@
 title: TCP/IP详解 卷一 BOOTP：引导程序协议
 author: TCP/IP详解
 date: 2025-10-16 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [TCP/IP, 积累]
+tags: [TCP/IP, 积累]
 pin: true
 math: true
 mermaid: true
@@ -13,7 +13,7 @@ mermaid: true
 
 #### 概述
 
-BOOTP使用UDP，且通常需与TFTP协同工作。 
+BOOTP使用UDP，且通常需与TFTP协同工作。
 
 #### BOOTP 的分组格式
 

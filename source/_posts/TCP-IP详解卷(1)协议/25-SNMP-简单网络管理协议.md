@@ -2,8 +2,8 @@
 title: TCP/IP详解 卷一 SNMP：简单网络管理协议
 author: TCP/IP详解
 date: 2025-10-25 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [TCP/IP, 积累]
+tags: [TCP/IP, 积累]
 pin: true
 math: true
 mermaid: true
@@ -118,7 +118,7 @@ SNMP中，有以下数据类型：
 
 **Case图**
 
- Case图真实地描述了一个给出的MIB组中变量之间的相互关系：
+Case图真实地描述了一个给出的MIB组中变量之间的相互关系：
 
 ![](assets/img/tcp_ip/UDP组的Case图.jpg)
 

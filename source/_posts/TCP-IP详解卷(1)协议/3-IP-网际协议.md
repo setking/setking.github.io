@@ -2,14 +2,12 @@
 title: TCP/IP详解 卷一 网际协议
 author: TCP/IP详解
 date: 2025-10-03 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [TCP/IP, 积累]
+tags: [TCP/IP, 积累]
 pin: true
 math: true
 mermaid: true
 ---
-
-
 
 <center style="font-size:24px;font-weight:900;">网际协议</center>
 
@@ -91,4 +89,3 @@ IP路由选择主要完成以下这些功能：
 (3)其他网络上的主机。
 
 如果知道本机的 IP地址，那么就知道它是否为A类、B类或C类地址(从IP地址的高位可以得知)，也就知道网络号和子网号之间的分界线。而根据子网掩码就可知道子网号与主机号之间的分界线。
-

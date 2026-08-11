@@ -2,8 +2,8 @@
 title: 深入浅出docker
 author: setKing
 date: 2025-06-020 11:33:00 +0800
-categories: [学习, 文档]
-tags: [学习, 文档]
+categories: [Docker]
+tags: [Docker, 学习, 积累]
 pin: true
 math: true
 mermaid: true
@@ -19,12 +19,12 @@ Docker daemon是单一的二进制文件，包含诸如Docker客户端、Docker 
 
 容器和虚拟机的区别
 
-***虚拟机***：在虚拟机模型中，首先要开启物理机并启动Hypervisor引导程序。一旦Hypervisor启动，就会占有机器上的全部物理资源，如CPU、RAM、存储和NIC。Hypervisor接下来就会将这些物理资源划分为虚拟资源，并且看起来与真实物理资源完全一致。然后Hypervisor会将这些资源打包进一个叫作虚拟机（VM）的软件结构当中。这样用户就可以使用这些虚拟机，并在其中安装操作系统和应用。
-![](assets/img/docker/hyper.png)     
+**_虚拟机_**：在虚拟机模型中，首先要开启物理机并启动Hypervisor引导程序。一旦Hypervisor启动，就会占有机器上的全部物理资源，如CPU、RAM、存储和NIC。Hypervisor接下来就会将这些物理资源划分为虚拟资源，并且看起来与真实物理资源完全一致。然后Hypervisor会将这些资源打包进一个叫作虚拟机（VM）的软件结构当中。这样用户就可以使用这些虚拟机，并在其中安装操作系统和应用。
+![](assets/img/docker/hyper.png)
 
-***容器***：服务器启动之后，所选择的操作系统会启动。在Docker世界中可以选择Linux，或者内核支持内核中的容器原语的新版本Windows。与虚拟机模型相同，OS也占用了全部硬件资源。在OS层之上，需要安装容器引擎（如Docker）。容器引擎可以获取系统资源 ，比如进程树、文件系统以及网络栈，接着将资源分割为安全的互相隔离的资源结构，称之为容器。每个容器看起来就像一个真实的操作系统，在其内部可以运行应用。
+**_容器_**：服务器启动之后，所选择的操作系统会启动。在Docker世界中可以选择Linux，或者内核支持内核中的容器原语的新版本Windows。与虚拟机模型相同，OS也占用了全部硬件资源。在OS层之上，需要安装容器引擎（如Docker）。容器引擎可以获取系统资源 ，比如进程树、文件系统以及网络栈，接着将资源分割为安全的互相隔离的资源结构，称之为容器。每个容器看起来就像一个真实的操作系统，在其内部可以运行应用。
 
-![](assets/img/docker/container.png)  
+![](assets/img/docker/container.png)
 
 从更高层面上来讲，Hypervisor是硬件虚拟化（Hardware Virtualization）——Hypervisor将硬件物理资源划分为虚拟资源；另外，容器是操作系统虚拟化（OS Virtualization） ——容器将系统资源划分为虚拟资源。
 
@@ -41,8 +41,6 @@ Docker daemon是单一的二进制文件，包含诸如Docker客户端、Docker 
 Docker Compose的前身是Fig。Fig是一个由Orchard公司开发的强有力的工具，在当时是进行多容器管理的最佳方案。Fig是一个基于Docker的Python工具，允许用户基于一个YAML文件定义多容器应用，从而可以使用fig 命令行工具进行应用的部署。Fig还可以对应用的全生命周期进行管理。内部实现上，Fig会解析YAML文件，并通过Docker API进行应用的部署和管理。这种方式相当不错！
 
 Docker Compose使用YAML文件来定义多服务的应用。YAML是JSON的一个子集，因此也可以使用JSON。
-
-
 
 docker-compose up 命令用于部署一个Compose应用。
 
@@ -111,8 +109,6 @@ docker service logs 命令用于查看服务的日志。
 
 ### Docker网络
 
-
-
 在顶层设计中，Docker网络架构由3个主要部分构成：CNM、Libnetwork和驱动。
 
 CNM是设计标准。在CNM中，规定了Docker网络架构的基础组成要素。
@@ -161,8 +157,6 @@ Swarm支持两种服务发布模式，两种模式均保证服务从集群外可
 
 在底层，Ingress模式采用名为Service Mesh 或者Swarm Mode Service Mesh的四层路由网络来实现。
 
-
-
 docker network ls 用于列出运行在本地Docker主机上的全部网络。
 
 docker network create 创建新的Docker网络。
@@ -172,8 +166,6 @@ docker network inspect 提供Docker网络的详细配置信息。
 docker network prune 删除Docker主机上全部未使用的网络。
 
 docker network rm 删除Docker主机上指定网络。
-
-
 
 ### Docker覆盖网络
 
@@ -234,8 +226,6 @@ Docker能够集成外部存储系统，使得集群间节点共享外部存储�
 
 不过这种配置需要关注数据损坏问题
 
-
-
 docker volume create 命令用于创建新卷。
 
 docker volume ls 会列出本地Docker主机上的全部卷。
@@ -261,8 +251,6 @@ docker volume rm 删除未被使用的指定卷。
 
 数据层加密会导致额外开销，而影响额外开销大小的因素有很多，比如流量的类型和流量的多少。但是，通常额外开销会在10%的范围之内。
 
-
-
 Stack是一组相关联的服务和基础设施，需要进行统一的部署和管理。Stack是由普通的Docker资源构建而来：网络、卷、密钥、服务等。这意味着可以通过普通的Docker命令对其进行查看和重新配置
 
 所有应用/Stack都应采用该方式进行更新。所有的变更都应该通过Stack文件进行声明，然后通过 docker stack deploy 进行部署 。
@@ -280,8 +268,6 @@ docker stack rm 命令用于从Swarm集群中移除Stack。
 安全本质就是分层！通俗地讲，拥有更多的安全层，就能拥有更多的安全性。而Docker提供了很多安全层。
 
 ![](assets/img/docker/security.jpg)
-
-
 
 Docker的原生安全技术：
 
@@ -335,8 +321,6 @@ Docker使用过滤模式下的Seccomp来限制容器对宿主机内核发起的�
 
 用户同样可以自定义Seccomp配置，同时也可以通过向Docker传递指定参数，使Docker启动时不设置任何Seccomp配置。
 
-
-
 Docker基本支持所有的Linux重要安全技术，同时对其进行封装并赋予合理的默认值，这在保证了安全的同时也避免了过多的限制
 
 ![](assets/img/docker/linux-security.jpg)
@@ -367,4 +351,3 @@ Dockr内容信任（Docker Content Trust，DCT）使得用户很容易就能确�
 ##### Docker密钥
 
 Docker将密钥变成Docker生态系统中的一等公民。
-

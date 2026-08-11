@@ -2,13 +2,12 @@
 title: TCP/IP详解 卷一 RARP：逆地址解析协议
 author: TCP/IP详解
 date: 2025-10-05 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [TCP/IP, 积累]
+tags: [TCP/IP, 积累]
 pin: true
 math: true
 mermaid: true
 ---
-
 
 <center style="font-size:24px;font-weight:900;">RARP：逆地址解析协议</center>
 

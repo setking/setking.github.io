@@ -2,8 +2,8 @@
 title: TCP/IP详解 卷一 TCP的保活定时器
 author: TCP/IP详解
 date: 2025-10-23 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [TCP/IP, 积累]
+tags: [TCP/IP, 积累]
 pin: true
 math: true
 mermaid: true
@@ -47,4 +47,3 @@ mermaid: true
 3. 另一端不可达
 
    在这个情况中，客户没有崩溃，但是在保活探查发送后的10分钟内无法到达，可能是一个中间路由器已经崩溃，或一条电话线临时出现故障，或发生了其他一些类似的情况。保活探查引发一个来自路由器的ICMP网络不可达的差错。对于主机slip上接收的TCP而言，这只是一个软差错。它报告收到了一个ICMP差错，但是差错的接收者并没有终止这个连接。
-

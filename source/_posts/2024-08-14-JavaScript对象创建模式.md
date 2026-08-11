@@ -2,8 +2,8 @@
 title: 对象创建模式
 author: setKing
 date: 2024-08-14 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [学习, Js]
+tags: [学习, Js, Web]
 pin: true
 math: true
 mermaid: true

@@ -2,8 +2,8 @@
 title: linux docker安装nacos 3.0
 author: setKing
 date: 2025-07-015 11:33:00 +0800
-categories: [教程, 文档]
-tags: [学习, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: 教程
 math: true
 mermaid: true
@@ -23,27 +23,27 @@ docker pull nacos/nacos-server
 mkdir /data/docker/nacos -p
 ```
 
->-p 作用是在创建多级文件时，不存在某一级文件就会自动创建，存在就使用原文件
+> -p 作用是在创建多级文件时，不存在某一级文件就会自动创建，存在就使用原文件
 
 3、nacos配置文件获取
 
- - 1 提前运行一个nacos容器。
+- 1 提前运行一个nacos容器。
 
-   ```
-   docker  run -d  --name nacos  \
-   -p 8848:8848  \
-   -p 9848:9848  \
-   -p 9849:9849  \
-   --privileged=true  \
-   --restart=always  \
-   -v /etc/localtime:/etc/localtime:ro  \
-   -e TZ=Asia/Shanghai \
-   -e LANG=en_US.UTF-8 \
-   -e JVM_XMS=256m  \
-   -e JVM_XMX=256m  \
-   -e MODE=standalone  \
-   nacos/nacos-server:latest
-   ```
+  ```
+  docker  run -d  --name nacos  \
+  -p 8848:8848  \
+  -p 9848:9848  \
+  -p 9849:9849  \
+  --privileged=true  \
+  --restart=always  \
+  -v /etc/localtime:/etc/localtime:ro  \
+  -e TZ=Asia/Shanghai \
+  -e LANG=en_US.UTF-8 \
+  -e JVM_XMS=256m  \
+  -e JVM_XMX=256m  \
+  -e MODE=standalone  \
+  nacos/nacos-server:latest
+  ```
 
 - 2 把nacos容器中的配置文件拷贝到宿主机中对应的目录下
 
@@ -85,11 +85,12 @@ mkdir /data/docker/nacos -p
 
 4、初始化nacos数据库
 
-		- 1 用navicat创建数据库，库名为nacos
-  - 2 获取数据库脚本文件，用以下方式都可以
-    - 通过nacos容器目录`/home/nacos/conf`下获取数据库脚本文件mysql-schema.sql。
-    - 通过宿主机目录`/data/docker/nacos/conf`下获取数据库脚本文件mysql-schema.sql。
-    - 直接通过 https://www.cnblogs.com/shigzh/p/17941250 获取数据库脚本文件。
+    	- 1 用navicat创建数据库，库名为nacos
+
+- 2 获取数据库脚本文件，用以下方式都可以
+  - 通过nacos容器目录`/home/nacos/conf`下获取数据库脚本文件mysql-schema.sql。
+  - 通过宿主机目录`/data/docker/nacos/conf`下获取数据库脚本文件mysql-schema.sql。
+  - 直接通过 https://www.cnblogs.com/shigzh/p/17941250 获取数据库脚本文件。
 - 3 执行数据库脚本文件
 
 5、运行容器并挂载nacos配置信息到宿主机
@@ -114,6 +115,6 @@ docker run -d --name nacos \
     -d nacos/nacos-server:latest
 ```
 
-3、部署访问地址：http://localhost:8080/index.html 
+3、部署访问地址：http://localhost:8080/index.html
 
->参考：https://nacos.io/docs/v3.0/quickstart/quick-start-docker/?spm=5238cd80.6a33be36.0.0.10651e5dFZrwzM
+> 参考：https://nacos.io/docs/v3.0/quickstart/quick-start-docker/?spm=5238cd80.6a33be36.0.0.10651e5dFZrwzM

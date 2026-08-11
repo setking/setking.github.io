@@ -2,8 +2,8 @@
 title: TCP/IP详解 卷一 SMTP：简单邮件传送协议
 author: TCP/IP详解
 date: 2025-10-28 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [TCP/IP, 积累]
+tags: [TCP/IP, 积累]
 pin: true
 math: true
 mermaid: true
@@ -32,7 +32,6 @@ mermaid: true
 1. SMTP命令
 
    最小的SMTP实现支持8种命令：
-
    - HELO：HELO命令标示自己。参数必须是完全合格的的客户主机名。
    - MAIL：MAIL命令标识出报文的发起人。
    - RCPT：标识接收方。如果有多个接收方，可以发多个RCPT命令。
@@ -47,7 +46,6 @@ mermaid: true
 2. 信封、首部和正文
 
    电子邮件由三部分组成：
-
    1. 信封（envelope）是MTA用来交付的。
    2. 首部由用户代理使用。以X-开始的首部字段是用户定义的字段。长首部字段被折在几行中，多余行以空格开头。
    3. 正文（body）是发送用户发给接收用户报文的内容。 RFC 822 指定正文为NVT ASCII文字行。当用DATA命令发送时，先发送首部，紧跟一个空行，然后是正文。用DATA命令发送的各行都必须小于1000字节。
@@ -96,7 +94,6 @@ Internet邮件的三个组成部分：信封、首部和正文。新加入的SMT
    charset是字符集规范。有效值是两个字符串us-ascii和iso-8859-x，其中x是一个单个数字，例如在iso-8859-1中的数字“1”。
 
    encoding是一个单个字符用来指定编码方法，支持两个值：
-
    - Q编码意思是引号中可打印的（quoted-printable），目的是用于拉丁字符集。大多数字符是作为NVT ASCII（当然最高位比特置 0）发送的。任何要发送的字符若其第 8比特置1则被作为3个字符发送：第1个是字符是“=”，跟着两个十六进制数。例如，字符é （它的二进制 8b i t值为0xe9）作为三个字符发送： =E9。空格通常作为下划线或三个字符 = 2 0发送。这种编码的目的在于，某些文本中除了大多数ASCII字符外，还有几个特殊字符。
    - B意思是以64为基数的编码。文本中的3个连续字节（24bit）被编码成4个6bit值。用于表示所有可能的 6bit值的64个NVT ASCII字符如下图所示。当要编码的个数不是3的倍数时，等号符“=”被用作填充符。
      ![](assets/img/tcp_ip/6bit值的编码.jpg)
@@ -111,9 +108,8 @@ Internet邮件的三个组成部分：信封、首部和正文。新加入的SMT
    ![](assets/img/tcp_ip/MIME内容类型和子类型.jpg)
 
    内容类型和用于内容的传送编码是相互独立的。前者由首部字段Content-Type指明，后者由首部字段Content-Transfer-Encoding指明。有5种不同的编码格式：
-
    1. 7bit，是默认的NVT ASCII
-   2.  quoted-printable。当字符中只有很少一部分的第8 bit置1时非常有用；
+   2. quoted-printable。当字符中只有很少一部分的第8 bit置1时非常有用；
    3. base64，如下图所示：
       ![](assets/img/tcp_ip/6bit值的编码.jpg)
    4. 8bit，包含字符行，其中某些为非ASCII字符且第8bit置1；

@@ -2,8 +2,8 @@
 title: sql和sqlx使用
 author: setKing
 date: 2024-06-13 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [学习, 后端, golang]
+tags: [学习, 后端, golang, sql]
 pin: true
 math: true
 mermaid: true

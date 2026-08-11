@@ -2,8 +2,8 @@
 title: ES6模块与CommonJS模块的差异
 author: setKing
 date: 2023-11-06 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [学习, Web]
+tags: [Web, 学习]
 pin: true
 math: true
 mermaid: true

@@ -2,8 +2,8 @@
 title: linux安装kong
 author: setKing
 date: 2025-05-15 11:33:00 +0800
-categories: [教程, 文档]
-tags: [学习, 文档]
+categories: [Linux]
+tags: [教程, 配置]
 pin: 教程
 math: true
 mermaid: true
@@ -15,8 +15,6 @@ mermaid: true
  docker network create kong-net
 ```
 
-
-
 ### 安装postgresql和migrations
 
 ```
@@ -27,10 +25,10 @@ mermaid: true
   -e "POSTGRES_DB=kong" \
   -e "POSTGRES_PASSWORD=kongpass" \
   postgres:13
-  
-  
-  
-  
+
+
+
+
   docker run --rm --network=kong-net \
  -e "KONG_DATABASE=postgres" \
  -e "KONG_PG_HOST=kong-database" \
@@ -83,10 +81,6 @@ proxy_listen = 0.0.0.0:8000 reuseport backlog=16384, 0.0.0.0:8443 http2 ssl reus
 
 ```
 
-
-
-
-
 ### 初始化kong的数据库并启动
 
 ```
@@ -104,8 +98,6 @@ sudo firewall-cmd --reload
 ![](assets/img/sample/kong.jpg)
 
 浏览器访问：http://192.168.194.100:8002/
-
-
 
 ### kong集成consul
 

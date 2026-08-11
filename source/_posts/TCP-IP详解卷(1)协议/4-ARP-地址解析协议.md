@@ -2,13 +2,12 @@
 title: TCP/IP详解 卷一 ARP：地址解析协议
 author: TCP/IP详解
 date: 2025-10-04 11:33:00 +0800
-categories: [学习]
-tags: [学习]
+categories: [TCP/IP, 积累]
+tags: [TCP/IP, 积累]
 pin: true
 math: true
 mermaid: true
 ---
-
 
 <center style="font-size:24px;font-weight:900;">ARP：地址解析协议</center>
 
@@ -56,4 +55,3 @@ ARP请求和应答分组的格式如图 ：
 
 1. 一个主机可以通过它来确定另一个主机是否设置了相同的 IP地址。
 2. 如果发送免费 ARP的主机正好改变了硬件地址（很可能是主机关机了，并换了一块接口卡，然后重新启动），那么这个分组就可以使其他主机高速缓存中旧的硬件地址进行相应的更新。
-
